@@ -1,0 +1,24 @@
+<div class="row">
+  <div ng-controller="userlistCtrl">
+    <div class="col col-3" ng-repeat="user in userList track by $index">
+      <div class="card" style="width: 18rem;" >
+          <img src="src/images/avator.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{user.username}}</h5>
+            <p class="card-text">
+            {{user.fullName}}
+              <small>Design Front-end with AngularJs and Html and css and Jquery and Js and Bootstrap</small>
+              <br/>
+              <small>Jointed on {{user.jointed}}</small>
+              <a href="#" ng-click="showProfile(user.id)"  class="btn btn-primary">About Me</a>
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+       </div>
+        <br/>
+
+      </div>
+
+  </div>
+   
+    </div>

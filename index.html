@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular js application</title>
+    <link href="src/libs/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="src/libs/jquery-3.7.1.min.js" ></script>
+    <script src="src/libs/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script src="src/libs/angular.min.js" ></script>
+    <script src="src/scripts/app.js"></script>
+    <script src="src/scripts/controllers/main.js"></script>
+    <script src="src/scripts/controllers/userlist.js"></script>
+ </head>
+ <body>
+    <div ng-app="myapp">
+        <div ng-controller="mainCtrl">
+            <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Angular Demo</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto ">
+                    
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+              <br/>
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col col-2">
+                  
+                    <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action " ng-class="{'active' : templateName == 'dashboard'}"  aria-current="true" ng-click="changeTemplateMenu('dashboard)">   Dashboard </a>
+                    <a href="#" class="list-group-item list-group-item-action"  ng-class="{'active' : templateName == 'userlist'}"    ng-click="changeTemplateMenu('userlist')">User List</a>
+                    <a href="#" class="list-group-item list-group-item-action"   ng-class="{'active' : templateName == 'settings'}"  ng-click="changeTemplateMenu('settings')">Settings</a>
+                    <a href="#" class="list-group-item list-group-item-action">...</a>
+                    <a class="list-group-item list-group-item-action disabled" aria-disabled="true">Logut</a>
+                  </div>
+                </div>
+
+                <div class="col col-10" >
+                <div ng-include="template"></div>
+                    </div>
+                  </div> 
+          </div>
+
+
+        </div>
+    </div>
+     
+
+ </body>
+</html>
